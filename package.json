@@ -10,62 +10,37 @@
   "scripts": {
     "test": "karma start",
     "tdd": "npm run watch & karma start --reporters=spec --browsers=Chrome --singleRun=false",
-    "watch": "riot -w src lib --template jade",
-    "build": "riot src lib --template jade"
+    "watch": "npx @riotjs/cli -w src -o lib",
+    "build": "npx @riotjs/cli src -o lib"
   },
   "directories": {
     "lib": "lib"
   },
-  "browserify": {
-    "transform": [
-      [
-        "riotify",
-        {
-          "expr": false,
-          "type": "coffee",
-          "template": "jade",
-          "extension": ".tag"
-        }
-      ],
-      [
-        "coffeeify",
-        {
-          "extension": ".coffee"
-        }
-      ]
-    ]
-  },
-  "author": "cris ward",
+  "author": "Keeth Kuwahara",
   "license": "MIT",
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
   },
   "devDependencies": {
-    "browserify-istanbul": "^0.2.1",
-    "chai": "^3.0.0",
-    "coffee-script": "^1.9.3",
-    "coffeeify": "^1.1.0",
-    "coveralls": "^2.11.4",
-    "es5-shim": "^4.4.1",
-    "istanbul": "^0.3.20",
-    "jade": "^1.9.2",
-    "karma": "^0.13.9",
-    "karma-browserify": "^4.3.0",
+    "chai": "^3.5.0",
+    "coveralls": "^2.13.3",
+    "es5-shim": "^4.6.7",
+    "karma": "^0.13.22",
+    "karma-browserify": "^4.4.2",
     "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^0.2.1",
-    "karma-coverage": "^0.5.0",
-    "karma-mocha": "^0.1",
-    "karma-phantomjs-launcher": "^0.1",
+    "karma-chrome-launcher": "^0.2.3",
+    "karma-coverage": "^0.5.5",
+    "karma-mocha": "^0.1.10",
+    "karma-phantomjs-launcher": "^0.1.4",
     "karma-sauce-launcher": "^0.2.14",
-    "karma-sinon": "^1.0.4",
+    "karma-sinon": "^1.0.5",
     "karma-spec-reporter": "0.0.20",
-    "mocha": "^2.0.1",
-    "riot": "^2.3.12",
-    "riotify": "^0.1.2",
+    "mocha": "^2.5.3",
+    "nyc": "^17.0.0",
+    "riot": "^9.3.0",
     "simulant": "^0.1.5",
-    "sinon": "^1.12.2",
-    "sinon-chai": "^2.8.0",
-    "stylus": "^0.53.0",
-    "watchify": "^3.2.1"
+    "sinon": "^1.17.7",
+    "sinon-chai": "^2.14.0",
+    "stylus": "^0.53.0"
   }
 }

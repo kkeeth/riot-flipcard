@@ -1,0 +1,119 @@
+di<flipcard>
+  <div class={cardwrap("{flipx:flipx,flipy:flipy,backflip:backflip,back45:back45}")}>
+    <slot />
+  </div>
+
+  <style>
+    flipcard {
+      display: block;
+      position: relative;
+      perspective: 500px;
+      transform-origin: center;
+    }
+
+    .cardwrap {
+      transition: 0.5s;
+      transform-style: preserve-3d;
+      position: relative;
+    }
+
+    .flipx {
+      transform: rotateY(180deg);
+    }
+
+    .flipy {
+      transform: rotateX(180deg);
+    }
+
+    .flipy.flipx {
+      transform: rotate3d(-45,-45,0,180deg);
+    }
+
+    .back45 .back {
+        transform: rotate3d(45,45,0,180deg);
+    }
+
+    .backflip .back {
+      transform: rotate3d(180,0,0,180deg);
+    }
+
+    .front,
+    .back {
+      background: white;
+      position: absolute;
+      box-sizing: border-box;
+      padding: 10px;
+      backface-visibility: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .front {
+      transform: rotateY(0deg);
+    }
+
+    .back {
+      transform: rotateY(180deg);
+      background: #444;
+      color: white;
+    }
+
+  </style>
+
+  <script>
+    export default {
+      flipx: false,
+      flipy: false,
+      onMounted() {
+        let ref;
+        if (!this.root.style.width) {
+          this.root.style.width = "100px";
+        }
+        if (!this.root.style.height) {
+          this.root.style.height = "100px";
+        }
+        this.root.style.display = "block";
+        if ((ref = opts.direction) != null ? ref.match(/[xy]{2}/) : void 0) {
+          this.back45 = true;
+        }
+        if (opts.direction === "y") {
+          this.backflip = true;
+        }
+        [].slice.call(this.root.querySelectorAll('.front,.back,.cardwrap')).forEach((elem) => {
+          elem.style.width = this.root.offsetWidth + "px";
+          return elem.style.height = this.root.offsetHeight + "px";
+        });
+        this.update();
+      },
+      toggle() {
+        var ref, ref1;
+        if (opts.direction !== "y" || ((ref = opts.direction) != null ? ref.match(/x/) : void 0)) {
+          this.flipx = !this.flipx;
+        }
+        if ((ref1 = opts.direction) != null ? ref1.match(/y/) : void 0) {
+          this.flipy = !this.flipy;
+        }
+        return this.update();
+      },
+      front() {
+        let ref, ref1;
+        if (opts.direction !== "y" || ((ref = opts.direction) != null ? ref.match(/x/) : void 0)) {
+          this.flipx = false;
+        }
+        if ((ref1 = opts.direction) != null ? ref1.match(/y/) : void 0) {
+          this.flipy = false;
+        }
+        this.update();
+      },
+      back() {
+        let ref, ref1;
+        if (opts.direction !== "y" || ((ref = opts.direction) != null ? ref.match(/x/) : void 0)) {
+          this.flipx = true;
+        }
+        if ((ref1 = opts.direction) != null ? ref1.match(/y/) : void 0) {
+          this.flipy = true;
+        }
+        this.update();
+      }
+    }
+  </script>
+</flipcard>
