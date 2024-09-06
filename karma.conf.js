@@ -1,27 +1,17 @@
 module.exports = function (config) {
   'use strict';
-  var saucelabsBrowsers = require('./browsers').browsers
-  var browsers = ['PhantomJS']
+  const saucelabsBrowsers = require('./browsers').browsers
+  const browsers = ['PhantomJS']
   if (process.env.SAUCE_USERNAME) {
     browsers = Object.keys(saucelabsBrowsers)
   }
 
   config.set({
     basePath: '',
-    frameworks: ['browserify','mocha', 'chai','sinon'],
+    frameworks: ['mocha', 'chai','sinon'],
     files: [
       './node_modules/simulant/dist/simulant.js',
-      './test/*.coffee'
     ],
-    preprocessors: {
-      './test/*.coffee': [ 'browserify'],
-      './lib/*.js': [ 'browserify']
-    },
-    "browserify": {
-      "debug": true,
-      "transform": ["browserify-istanbul"],
-      extensions: ['.js', '.tag', '.coffee']
-    },
     reporters: ['spec', "coverage",'saucelabs'],
     //hostname:'192.168.1.7',
     port: 9876,
