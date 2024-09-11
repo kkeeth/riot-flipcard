@@ -11,11 +11,10 @@
     <app></app>
 
     <script src="app.riot" type="riot"></script>
-    <script src="flipcard.riot" type="riot"></script>
     <script src="https://unpkg.com/riot@9/riot+compiler.min.js"></script>
+    <script src="flipcard.js"></script>
     <script>
       riot.compile().then(() => {
-        riot.mount('flipcard')
         riot.mount('app')
       })
     </script>

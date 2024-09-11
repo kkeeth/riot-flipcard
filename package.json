@@ -2,7 +2,8 @@
   "name": "riot-flipcard",
   "version": "1.0.1",
   "description": "A little double side modal",
-  "main": "lib/flipcard.js",
+  "main": "app.js",
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "https://github.com/crisward/riot-flipcard.git"
@@ -10,8 +11,9 @@
   "scripts": {
     "test": "karma start",
     "tdd": "npm run watch & karma start --reporters=spec --browsers=Chrome --singleRun=false",
-    "watch": "npx @riotjs/cli -w src -o lib",
-    "build": "npx @riotjs/cli src -o lib"
+    "watch": "vite && npm run cp:js",
+    "build": "vite build && npm run cp:js",
+    "cp:js": "cp lib/flipcard.js docs/flipcard.js"
   },
   "directories": {
     "lib": "lib"
@@ -22,6 +24,7 @@
     "registry": "http://registry.npmjs.org"
   },
   "devDependencies": {
+    "@riotjs/hot-reload": "^9.0.1",
     "chai": "^5.1.1",
     "coveralls": "^2.13.3",
     "es5-shim": "^4.6.7",
@@ -37,8 +40,11 @@
     "mocha": "^10.7.3",
     "nyc": "^17.0.0",
     "riot": "^9.3.0",
+    "rollup": "^4.21.2",
+    "rollup-plugin-riot": "^9.0.2",
     "simulant": "^0.2.2",
     "sinon": "^18.0.0",
-    "sinon-chai": "^4.0.0"
+    "sinon-chai": "^4.0.0",
+    "vite": "^5.4.3"
   }
 }
