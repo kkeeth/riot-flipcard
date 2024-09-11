@@ -1,16 +1,27 @@
 module.exports = function (config) {
   'use strict';
   const saucelabsBrowsers = require('./browsers').browsers
-  const browsers = ['PhantomJS']
+  const browsers = ['']
   if (process.env.SAUCE_USERNAME) {
     browsers = Object.keys(saucelabsBrowsers)
   }
 
   config.set({
+    plugins: [
+      require('karma-mocha'),
+      require('karma-chai'),
+      require('karma-sinon'),
+      'karma-chrome-launcher',
+      'karma-sauce-launcher',
+      'karma-coverage',
+      'karma-spec-reporter',
+      'karma-saucelabs-reporter'
+    ],
     basePath: '',
     frameworks: ['mocha', 'chai','sinon'],
     files: [
       './node_modules/simulant/dist/simulant.js',
+      './test/**/*.js'
     ],
     reporters: ['spec', "coverage",'saucelabs'],
     //hostname:'192.168.1.7',

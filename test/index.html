@@ -58,7 +58,9 @@
     <script src="../node_modules/riot/riot+compiler.min.js"></script>
     <script src="../lib/flipcard.js"></script>
     <script>
-      riot.mount('flipcard')
+      riot.compile().then(() => {
+        riot.mount('flipcard')
+      })
     </script>
   </body>
 </html>
