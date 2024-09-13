@@ -24,7 +24,9 @@
     "registry": "http://registry.npmjs.org"
   },
   "devDependencies": {
+    "@playwright/test": "^1.47.0",
     "@riotjs/hot-reload": "^9.0.1",
+    "@types/node": "^22.5.4",
     "nyc": "^17.0.0",
     "riot": "^9.3.0",
     "rollup": "^4.21.2",
