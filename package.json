@@ -9,7 +9,7 @@
     "url": "https://github.com/crisward/riot-flipcard.git"
   },
   "scripts": {
-    "test": "karma start",
+    "test": "playwright test",
     "tdd": "npm run watch & karma start --reporters=spec --browsers=Chrome --singleRun=false",
     "watch": "vite && npm run cp:js",
     "build": "vite build && npm run cp:js",
@@ -28,6 +28,7 @@
     "@riotjs/hot-reload": "^9.0.1",
     "@types/node": "^22.5.4",
     "nyc": "^17.0.0",
+    "playwright": "^1.47.0",
     "riot": "^9.3.0",
     "rollup": "^4.21.2",
     "rollup-plugin-riot": "^9.0.2",

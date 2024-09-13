@@ -20,6 +20,9 @@ importers:
       nyc:
         specifier: ^17.0.0
         version: 17.0.0
+      playwright:
+        specifier: ^1.47.0
+        version: 1.47.0
       riot:
         specifier: ^9.3.0
         version: 9.4.0
