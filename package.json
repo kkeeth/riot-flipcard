@@ -25,25 +25,11 @@
   },
   "devDependencies": {
     "@riotjs/hot-reload": "^9.0.1",
-    "chai": "^5.1.1",
-    "coveralls": "^2.13.3",
-    "es5-shim": "^4.6.7",
-    "karma": "^6.4.4",
-    "karma-chai": "^0.1.0",
-    "karma-chrome-launcher": "^3.2.0",
-    "karma-coverage": "^2.2.1",
-    "karma-mocha": "^2.0.1",
-    "karma-sauce-launcher": "^4.3.6",
-    "karma-sinon": "^1.0.5",
-    "karma-spec-reporter": "0.0.36",
-    "mocha": "^10.7.3",
     "nyc": "^17.0.0",
     "riot": "^9.3.0",
     "rollup": "^4.21.2",
     "rollup-plugin-riot": "^9.0.2",
     "simulant": "^0.2.2",
-    "sinon": "^18.0.0",
-    "sinon-chai": "^4.0.0",
     "vite": "^5.4.3"
   }
 }
