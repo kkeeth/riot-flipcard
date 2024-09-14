@@ -10,7 +10,6 @@
   },
   "scripts": {
     "test": "playwright test",
-    "tdd": "npm run watch & karma start --reporters=spec --browsers=Chrome --singleRun=false",
     "watch": "vite && npm run cp:js",
     "build": "vite build && npm run cp:js",
     "cp:js": "cp lib/flipcard.js docs/flipcard.js"
