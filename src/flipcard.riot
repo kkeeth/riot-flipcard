@@ -1,5 +1,5 @@
 <flipcard>
-  <div class={`cardwrap${state.flipx ? " flipx" : ""}${state.flipy ? " flipy" : ""}${state.backflip ? " backfliip" : ""}${state.back45 ? " back45" : ""}`}>
+  <div class={getClassNames()}>
     <slot toggle={toggle} back={back} />
   </div>
 
@@ -120,6 +120,16 @@
           this.state.flipy = true;
         }
         this.update();
+      },
+      getClassNames() {
+        const classNames = ['cardwrap'];
+
+        if (this.state.flipx) classNames.push('flipx');
+        if (this.state.flipy) classNames.push('flipy');
+        if (this.state.backflip) classNames.push('backflip');
+        if (this.state.back45) classNames.push('back45');
+
+        return classNames.join(' ');
       }
     }
   </script>
