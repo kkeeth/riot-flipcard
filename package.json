@@ -6,11 +6,10 @@
   "type": "module",
   "repository": {
     "type": "git",
-    "url": "https://github.com/crisward/riot-flipcard.git"
+    "url": "https://github.com/kkeeth/riot-flipcard.git"
   },
   "scripts": {
     "test": "playwright test",
-    "watch": "vite && npm run cp:js",
     "build": "vite build && npm run cp:js",
     "cp:js": "cp lib/flipcard.js docs/flipcard.js"
   },
