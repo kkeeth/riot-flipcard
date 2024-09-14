@@ -5,7 +5,7 @@ A small riot tag which flips the content in 3d using css transforms.
 ## Install
 
 ```
-npm install riot-flipcard
+npm install @kkeeth/riot-flipcard
 ```
 
 ## Demo
