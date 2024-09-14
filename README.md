@@ -10,7 +10,7 @@ npm install riot-flipcard
 
 ## Demo
 
-https://crisward.github.io/riot-flipcard/
+https://kkeeth.github.io/riot-flipcard/
 
 ## Usage
 
