@@ -18,9 +18,6 @@
   },
   "author": "Keeth Kuwahara",
   "license": "MIT",
-  "publishConfig": {
-    "registry": "http://registry.npmjs.org"
-  },
   "devDependencies": {
     "@playwright/test": "^1.47.0",
     "@riotjs/hot-reload": "^9.0.1",
