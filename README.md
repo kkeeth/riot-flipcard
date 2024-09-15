@@ -52,6 +52,32 @@ Front and back can be useful for hover effects ie.
 </flipcard>
 ````
 
+### ▼ Render with a **CDN**
+
+Please add the following in `HTML`.
+
+```html
+<app></app>
+
+<script src="app.riot" type="riot"></script>
+<script src="https://cdn.jsdelivr.net/npm/riot@9.4.0/riot+compiler.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@kkeeth/riot-flipcard@2.0.1/lib/flipcard.umd.js"></script>
+<script>
+  riot.compile().then(() => {
+    riot.mount('app')
+  })
+</script>
+```
+
+### ▼Render with a **Bundler**
+
+Please import this module in your main `.js` file.
+
+```js
+import "@kkeeth/riot-flipcard";
+```
+
+
 ### Styling
 
 You can style flipcard any way you like.

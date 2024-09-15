@@ -8,11 +8,11 @@
   </head>
 
   <body>
-    <app></app>g
+    <app></app>
 
     <script src="app.riot" type="riot"></script>
-    <script src="riot+compiler.min.js"></script>
-    <script src="flipcard.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/riot@9.4.0/riot+compiler.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@kkeeth/riot-flipcard@2.0.1/lib/flipcard.umd.js"></script>
     <script>
       riot.compile().then(() => {
         riot.mount('app')
