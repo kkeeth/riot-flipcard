@@ -18,6 +18,12 @@
       "require": "./lib/flipcard.umd.js"
     }
   },
+  "keywords": [
+    "riot",
+    "riotjs",
+    "riot.js",
+    "flipcard"
+  ],
   "scripts": {
     "test": "playwright test",
     "build": "vite build && npm run cp:js",
