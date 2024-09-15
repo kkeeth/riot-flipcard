@@ -9,8 +9,14 @@ export default defineConfig({
     lib: {
       entry: resolve(__dirname, "app.js"),
       name: "flipcard",
-      fileName: (format) => `flipcard.js`,
-      formats: ["umd"],
+      fileName: (format) => {
+        if (format === "" || format === "es") {
+          return `flipcard.js`;
+        } else {
+          return `flipcard.${format}.js`
+        }
+      },
+      formats: ["es", "umd"],
     },
     rollupOptions: {
       external: ["riot"],

@@ -2,16 +2,26 @@
   "name": "@kkeeth/riot-flipcard",
   "version": "2.0.0",
   "description": "A little double side modal",
-  "main": "app.js",
+  "main": "lib/flipcard.js",
   "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/kkeeth/riot-flipcard.git"
   },
+  "files": [
+    "lib"
+  ],
+  "module": "lib/flipcard.js",
+  "exports": {
+    ".": {
+      "import": "./lib/flipcard.js",
+      "require": "./lib/flipcard.umd.js"
+    }
+  },
   "scripts": {
     "test": "playwright test",
     "build": "vite build && npm run cp:js",
-    "cp:js": "cp lib/flipcard.js docs/flipcard.js"
+    "cp:js": "cp lib/flipcard.umd.js docs/flipcard.js"
   },
   "directories": {
     "lib": "lib"
